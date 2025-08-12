@@ -16,6 +16,7 @@ app.config['MYSQL_HOST'] = os.environ.get('MYSQL_HOST', 'localhost')
 app.config['MYSQL_USER'] = os.environ.get('MYSQL_USER', 'root')  # Enter your MySQL username
 app.config['MYSQL_PASSWORD'] = os.environ.get('MYSQL_PASSWORD', 'Manthu@2605')  # Enter your MySQL password
 app.config['MYSQL_DB'] = os.environ.get('MYSQL_DB', 'onroadservice')  # Enter your MySQL database name
+app.config['MYSQL_PORT'] = int(os.environ.get('MYSQL_PORT', '3306'))
 # mechanics = {'admin': 'password'}
 
 def get_db_connection():
@@ -23,7 +24,8 @@ def get_db_connection():
         host=app.config['MYSQL_HOST'],
         user=app.config['MYSQL_USER'],
         password=app.config['MYSQL_PASSWORD'],
-        database=app.config['MYSQL_DB']
+        database=app.config['MYSQL_DB'],
+        port=app.config['MYSQL_PORT']
     )
 
 @app.route('/')
