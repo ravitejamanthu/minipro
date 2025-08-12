@@ -1,0 +1,28 @@
+{% set endpoint = request.endpoint %}
+{% set user_pages = [
+  'user_dashboard', 'garages_near_you', 'user_profile', 'contact', 'our_service',
+  'user_login', 'user_register', 'process_user_login', 'process_dropdown', 'logout'
+] %}
+{% set mech_pages = [
+  'mechanic_dashboard', 'profile', 'feedback', 'help',
+  'mechanic_login', 'mechanic_register', 'process_mechanic_login'
+] %}
+
+{% if endpoint != 'login' %}
+  {% if endpoint in user_pages %}
+    {% set back_url = url_for('user_login') %}
+  {% elif endpoint in mech_pages %}
+    {% set back_url = url_for('mechanic_login') %}
+  {% else %}
+    {% set back_url = url_for('login') %}
+  {% endif %}
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/back_to_home.css') }}">
+
+  <div id="back-to-home-container">
+    <a href="{{ back_url }}" class="back-home-btn" aria-label="Back">← Back</a>
+    <button id="back-home-fab" title="Back" aria-label="Back" onclick="window.location.href='{{ back_url }}'">🏠</button>
+    <script src="{{ url_for('static', filename='js/back_to_home.js') }}"></script>
+  </div>
+{% endif %}
+

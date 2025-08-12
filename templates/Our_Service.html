@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f1f1f1;
+}
+.header {
+  background-color: #000080;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+.container {
+  width: 90%;
+  margin: auto;
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center; /* Added text-align center here to avoid <center> tags */
+}
+.button {
+  background-color: #000080;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.image-container {
+  margin-bottom: 20px;
+}
+</style>
+</head>
+<body>
+
+{% include '_back_to_home.html' %}
+<div class="header">
+  <h1>ORVBA</h1>
+</div>
+
+<div class="container">
+  <h2>AVAILABLE SERVICES</h2>
+  <p>Puncture: ₹120</p>
+  <p>Washing/Polishing: ₹200</p>
+  <p>Oil/Oil Filter Change: ₹700</p>
+  <p>Wiper Blade Replacement: ₹1000</p>
+  <p>Regular Air Filter: ₹500</p>
+  <p>Schedule Maintenance: ₹1000</p>
+  <p>New Tyres: ₹3310</p>
+  <p>Battery Work: ₹1500</p>
+</div>
+
+</body>
+</html>

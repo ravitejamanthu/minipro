@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f1f1f1;
+}
+.header {
+  background-color: #000080;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+.container {
+  width: 90%;
+  margin: auto;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+table, th, td {
+  border: 1px solid #dddddd;
+}
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+th {
+  background-color: #000080;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+{% include '_back_to_home.html' %}
+<div class="header">
+  <h1>Mechanic Profile</h1>
+</div>
+
+<div class="container">
+  <h2>Profile Information</h2>
+  <table>
+    <tr>
+      <th>Address</th>
+      <th>Email</th>
+      <th>Garage_name</th>
+       <th>Name</th>
+       <th>Username</th>
+       <th>Mobile Number</th>
+       
+      
+    </tr>
+    {% for mechanic in details %}
+    <tr>
+      <td>{{ mechanic[0] }}</td>
+      <td>{{ mechanic[1] }}</td>
+      <td>{{ mechanic[2] }}</td>
+      <td>{{ mechanic[3] }}</td>
+      <td>{{ mechanic[4] }}</td>
+      <td>{{mechanic[5]}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+
+</body>
+</html>

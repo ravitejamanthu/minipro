@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f1f1f1;
+}
+.header {
+  background-color: #000080;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+.container {
+  width: 90%;
+  margin: auto;
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center; /* Added text-align center here to avoid <center> tags */
+}
+.button {
+  background-color: #000080;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.image-container {
+  margin-bottom: 20px;
+}
+</style>
+</head>
+<body>
+
+{% include '_back_to_home.html' %}
+<div class="header">
+  <h1>BREAKDOWN BUDDY</h1>
+</div>
+
+<div class="container">
+  <div class="image-container">
+    <img src="static/images/b02cd3e302dff7516ccc0c1caa6a09b1.jpg" alt="Breakdown Buddy Image" width="300">
+  </div>
+  <h2>Hello Mechanic, How can we assist you today?</h2>
+  <a href="{{ url_for('profile') }}" class="button">Profile</a><br>
+  <a href="{{ url_for('feedback') }}" class="button">Feedback of User</a><br>
+  <a href="{{ url_for('help') }}" class="button">Help</a><br>
+  <a href="{{ url_for('logout') }}" class="button">Logout</a>
+</div>
+
+</body>
+</html>

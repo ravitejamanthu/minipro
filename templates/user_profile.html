@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f1f1f1;
+}
+.header {
+  background-color: #000080;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+.container {
+  width: 50%;
+  margin: auto;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin-top: 20px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+table, th, td {
+  border: 1px solid black;
+}
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+</style>
+</head>
+<body>
+
+{% include '_back_to_home.html' %}
+<div class="header">
+  <h1>User Profile</h1>
+</div>
+
+<div class="container">
+  <h2>User Details</h2>
+  <table>
+    <tr>
+      <th>Field</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>Address</td>
+      <td>testAddress</td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>test@gmail.com</td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>ravi</td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td>Manthu@1234</td>
+    </tr>
+    <tr>
+      <td>Username</td>
+      <td>ravi1234</td>
+    </tr>
+  </table>
+</div>
+
+</body>
+</html>

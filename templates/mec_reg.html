@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Page</title>
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        background-image: url("https://media.istockphoto.com/id/1148635445/photo/abstract-black-grainy-paper-texture-background-or-backdrop-empty-asphalt-road-surface-for.webp?b=1&s=170667a&w=0&k=20&c=SsSK-YbyIA9JkT9_v3btSjc2y__mAoCn6uYJ8LKx9PI="); 
+        background-size: cover;
+        background-position: center;
+        margin: 0;
+        padding: 0;
+        }
+
+        .form-container {
+            width: 300px;
+            padding: 16px;
+            background-color: white;
+            margin: 0 auto;
+            margin-top: 100px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background-color: #000080;
+            color: white;
+            padding: 10px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-container input {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            outline: none;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #000080;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #000080;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <center>
+        <div class="header">REGISTRATION</div></center><br>
+        {% include '_back_to_home.html' %}
+        <form action="mechanic_register" method="post">
+            <input type="text" name="owner_name" placeholder="Owner-Name" required>
+            <input type="text" name="garage_name" placeholder="Garage Name" required>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Enter Password" required>
+            <input type="password" name="confirm_password" placeholder="Re-Enter Password" required>
+            <input type="text" name="address" placeholder="Address" required>
+            <input type="text" name="mobile_no" placeholder="Mobile No" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <button type="submit">REGISTER</button>
+        </form>
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+            {% endif %}
+    </div>
+</body>
+</html>
+

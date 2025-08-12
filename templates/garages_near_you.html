@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garages Near You</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+        }
+        .header {
+            background-color: #000080;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #000080;
+            color: white;
+        }
+        .logout-button{
+  position: absolute;
+  top: 10px; /* Adjust this value as needed */
+  right: 10px; /* Adjust this value as needed */
+  background-color: #ff0000; /* Change this to your preferred button color */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+    </style>
+</head>
+<body>
+
+
+
+<div class="container">
+{% include '_back_to_home.html' %}
+    <a href="{{ url_for('logout') }}" class="logout-button">Logout</a>
+    <form action="process_dropdown" method="post">
+<select name="cityselect">  
+    <option value="hyderabad">hyderabad</option>
+    <option value="vijayawada">vijayawada</option>
+    <option value="vizag">vizag</option>
+    <option value="kurnool">kurnool</option>
+    <option value="gadwal">gadwal</option>
+    <option value="warangal">warangal</option>
+    <option value="godavari">godavari</option>
+</select>
+<button type="submit">Submit</button>
+    </form>
+</div>
+<div class="container">
+    <h2>Garages Near You</h2>
+    <p>Welcome, {{ username }}!</p>
+    <table>
+        <tr>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Garage Name</th>
+            <th>Owner Name</th>
+            <th>Contact Number</th>
+        </tr>
+        {% for mechanic in mechanics %}
+        <tr>
+            <td>{{ mechanic[0] }}</td>
+            <td>{{ mechanic[1] }}</td>
+            <td>{{ mechanic[2] }}</td>
+            <td>{{ mechanic[3] }}</td>
+            <td>{{ mechanic[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+</body>
+</html>
